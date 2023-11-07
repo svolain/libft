@@ -6,35 +6,11 @@
 /*   By: vsavolai <vsavolai@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 10:58:20 by vsavolai          #+#    #+#             */
-/*   Updated: 2023/11/01 13:57:50 by vsavolai         ###   ########.fr       */
+/*   Updated: 2023/11/07 14:06:55 by vsavolai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-static char	*ft_newsubstr(char const *s, unsigned int start,
-size_t len)
-{
-	char	*sub;
-	size_t	i;
-
-	if (s == 0)
-		return (0);
-	i = 0;
-	sub = (char *)malloc(sizeof(char) * (len + 1));
-	if (sub == 0)
-		return (0);
-	if (s[i] == '\0')
-		return (sub);
-	while (i < len && s[i] != '\0')
-	{
-		sub[i] = s[start];
-		i++;
-		start++;
-	}
-	sub[i] = '\0';
-	return (sub);
-}
 
 static size_t	ft_arrsize(const char *s, char c)
 {
@@ -55,13 +31,13 @@ static size_t	ft_arrsize(const char *s, char c)
 			j++;
 		}
 		i++;
-		while (s[i + 1] == c)
+		while (s[i + 1] == c || s[i + 1] == '\0')
 			i++;
 	}
 	return (j);
 }
 
-static char	**ft_free(char **arr)
+static void	ft_free(char **arr)
 {
 	size_t j;
 
@@ -72,64 +48,84 @@ static char	**ft_free(char **arr)
 		j++;
 	}
 	free(arr);
-	return(arr);
 }
 
-static char	**ft_fillarr(char **arr, const char *s, char c, size_t arrsize)
+static int  ft_getlenght(const char *s, int i, char c)
 {
-	size_t			i;
-	size_t			j;
-	unsigned int	k;
-
-	i = 0;
-	k = 0;
-	while (i < (arrsize))
+	int j;
+	
+	j = 0;
+	while(s[i] != c && s[i] != '\0')
 	{
-		j = 0;
-		while (s[k] == c)
-			k++;
-		while (s[k + j] != c && s[k + j] != '\0')
-			j++;
-		j++;
-		arr[i] = ft_newsubstr(s, k, j -1);
-			if (arr[i] == 0)
-				return (ft_free(arr));	
-		k += j - 1;
 		i++;
+		j++;
 	}
-	arr[i - 1] = 0;
-	return (arr);
+	return (j);
+}
+
+static int	ft_fillarr(char **arr, const char *s, char c, size_t k)
+{
+	size_t  i;
+ 	int     j;
+    
+	i = 0;
+	j = 0;
+	while (i < ft_strlen(s))
+	{
+		if(s[i] != c)
+		{     
+			j = ft_getlenght(s, i, c);
+			arr[k] = ft_substr(s, i, j);
+			if (!arr[k])
+			{
+				ft_free(arr);
+				return (k);
+			}
+			k++;
+			i += j;
+		}
+		i ++;
+	}
+	return (k);
 }
 
 char	**ft_split(char const *s, char c)
 {
 	char	**arr;
-	size_t	arrsize;
-	
-	arrsize = ft_arrsize(s, c);
-	if (arrsize < 2)
-		arrsize = 2;
-	arr = (char **)malloc(sizeof(char *) * arrsize);
+	int 	k;
+
+	if (!s)
+		return (0);
+	arr = (char **)malloc(sizeof(char *) * (ft_arrsize(s, c) + 1));
 	if (arr == 0)
 		return (0);
-	if (s[0] == '\0')
-		return (arr);
-	arr = ft_fillarr(arr, s, c, arrsize);
+	k = 0;
+	k = ft_fillarr(arr, s, c, k);
+	arr[k] = 0;
 	return (arr);
 }
-
 /*
 #include <stdio.h>
 int main(void)
 {
-	char *s = "                  olol";
-	char **arr;
-	arr = ft_split(s, ' ');
+    char *s = "lorem ipsum dolor";
+    char **arr;
+    arr = ft_split(s, ' ');
 
-	while (arr != 0)
-	{
-		printf("%s\n", *arr);
-		arr++;
-	}
+    size_t i = 0;
+    while (arr[i] != '\0')
+    {
+        printf("%s\n", arr[i]);
+        i++;
+    }
+	size_t j;
+
+    j = 0;
+    while (arr[j] == 0)
+    {
+        free(arr[j]);
+        j++;
+    }
+    free(arr);
 }
 */

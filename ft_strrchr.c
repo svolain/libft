@@ -6,36 +6,26 @@
 /*   By: vsavolai <vsavolai@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 08:29:36 by vsavolai          #+#    #+#             */
-/*   Updated: 2023/10/29 15:09:49 by vsavolai         ###   ########.fr       */
+/*   Updated: 2023/11/10 09:20:35 by vsavolai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include <stdio.h>
-//#include <string.h>
 #include "libft.h"
 
-char *ft_strrchr(const char *s, int c)
+char	*ft_strrchr(const char *s, int c)
 {
-	char *found;
+	char	*found;
+	char	cc;
 
+	cc = c;
 	found = NULL;
-	while(*s)
+	while (*s)
 	{
-		if (*s == c)
+		if (*s == cc)
 			found = (char *)s;
 		s++;
 	}
-	if (c == '\0')
-		return (char *)s;
-	return found;
+	if (cc == '\0')
+		return ((char *)s);
+	return (found);
 }
-
-/*
-int	main(void) {
-		
-	const char *str = "Hello.world";
-
-	printf("%s\n", ft_strrchr(str, 'o'));
-	printf("%s\n", strrchr(str, 'o'));
-}
-*/

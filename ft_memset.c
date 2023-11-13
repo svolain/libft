@@ -6,13 +6,13 @@
 /*   By: vsavolai <vsavolai@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 12:16:12 by vsavolai          #+#    #+#             */
-/*   Updated: 2023/10/25 10:08:26 by vsavolai         ###   ########.fr       */
+/*   Updated: 2023/11/10 09:15:55 by vsavolai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 //#include <stdio.h>
 //#include <string.h>
-#include <stdlib.h>
+#include "libft.h"
 
 void	*ft_memset(void *b, int c, size_t len)
 {
@@ -29,16 +29,3 @@ void	*ft_memset(void *b, int c, size_t len)
 	}
 	return (b);
 }
-
-/*
-int main(void)
-{
-	char str[6] = "abcde";
-	char strr[6] = "abcde";
-	
-	printf("%s\n", ft_memset(str, '0', 6));
-	printf("%s\n", memset(strr, '8', 6));
-
-    return (0);
-}
-*/

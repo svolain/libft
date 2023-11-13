@@ -6,13 +6,11 @@
 /*   By: vsavolai <vsavolai@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 15:13:16 by vsavolai          #+#    #+#             */
-/*   Updated: 2023/10/27 06:04:55 by vsavolai         ###   ########.fr       */
+/*   Updated: 2023/11/09 14:26:37 by vsavolai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include <stdio.h>
-//#include <string.h>
-#include <stdlib.h>
+#include "libft.h"
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
@@ -33,15 +31,3 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	}
 	return (0);
 }
-/*
-int	main(void)
-{
-	printf("%d\n", ft_memcmp("ABI", "ABI", 3));
-	printf("%d\n", ft_memcmp("ABI", "abi", 3));
-	printf("%d\n", ft_memcmp("abi", "ABI", 3));
-
-	printf("%d\n", memcmp("ABI", "ABI", 3));
-	printf("%d\n", memcmp("ABI", "abi", 3));
-	printf("%d\n", memcmp("abi", "ABI", 3));
-}
-*/

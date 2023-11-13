@@ -6,46 +6,37 @@
 /*   By: vsavolai <vsavolai@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/29 10:31:38 by vsavolai          #+#    #+#             */
-/*   Updated: 2023/10/31 10:37:32 by vsavolai         ###   ########.fr       */
+/*   Updated: 2023/11/10 09:21:44 by vsavolai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include <stdio.h>
-//#include <stdlib.h>
 #include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start,
-size_t	len)
+char	*ft_substr(char const *s, unsigned int start, size_t	len)
 {
-	char	*sub;
-	size_t	sublen;
 	size_t	i;
+	size_t	j;
+	char	*sub;
 
-	if (s == NULL)
-		return (NULL);
 	i = 0;
-	sublen = len - start;
-	sub = (char *)malloc(sizeof(char) * (len + 1));
-	if (sub == NULL)
-		return (NULL);
-	if (s[i] == '\0' || start >= ft_strlen(s))
-		return (sub);
-	while (i < len && s[i] != '\0')
+	j = 0;
+	if (start >= ft_strlen(s))
+		len = 0;
+	if (len < ft_strlen(s) - start)
+		sub = (char *)malloc(sizeof(char) * (len + 1));
+	else
+		sub = (char *)malloc(sizeof(char) * (ft_strlen(s) - start + 1));
+	if (!sub)
+		return (0);
+	while (s[i])
 	{
-		sub[i] = s[start];
+		if (i >= start && j < len)
+		{
+			sub[j] = s[i];
+			j++;
+		}
 		i++;
-		start++;
 	}
-	sub[i] = '\0';
+	sub[j] = '\0';
 	return (sub);
 }
-
-/*
-int	main(void)
-{
-	char *s = "bread loaf";
-	char *ret = ft_substr(s, 8, 5);
-	printf("%s\n", ret);
-	free(ret);
-}
-*/

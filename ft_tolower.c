@@ -6,12 +6,11 @@
 /*   By: vsavolai <vsavolai@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 05:59:41 by vsavolai          #+#    #+#             */
-/*   Updated: 2023/10/26 06:28:39 by vsavolai         ###   ########.fr       */
+/*   Updated: 2023/11/09 15:36:07 by vsavolai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include <stdio.h>
-//#include <ctype.h>
+#include "libft.h"
 
 int	ft_tolower(int c)
 {
@@ -21,20 +20,3 @@ int	ft_tolower(int c)
 	}
 	return (c + 32);
 }
-
-/*
-int	main(void)
-{
-	printf("%c\n", ft_tolower('D'));
-	printf("%c\n", ft_tolower('J'));
-	printf("%c\n", ft_tolower('K'));
-	printf("%c\n", ft_tolower('b'));
-	printf("%c\n", ft_tolower('4'));
-
-	printf("%c\n", tolower('D'));
-	printf("%c\n", tolower('J'));
-	printf("%c\n", tolower('K'));
-	printf("%c\n", tolower('b'));
-	printf("%c\n", tolower('4'));
-}
-*/

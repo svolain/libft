@@ -6,12 +6,10 @@
 /*   By: vsavolai <vsavolai@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 08:15:45 by vsavolai          #+#    #+#             */
-/*   Updated: 2023/10/30 15:12:28 by vsavolai         ###   ########.fr       */
+/*   Updated: 2023/11/10 09:18:54 by vsavolai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include<stdio.h>
-//#include<string.h>
 #include "libft.h"
 
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
@@ -37,20 +35,3 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	else
 		return (k + ft_strlen(src));
 }
-
-/*
-int	main(void)
-{
-	char	 dst[18] = "abcd";
-	char	 cdst[18] = "abcd";
-	const char	src[7] = "zizzzz";
-	const char	csrc[7] = "zizzzz";
-
-	printf("%s\n", dst);
-    printf("%s\n", cdst);
-	printf("%zu\n", ft_strlcat(dst, src, 18));
-    printf("%zu\n", strlcat(cdst, csrc, 18));
-	printf("%s\n", dst);
-    printf("%s\n", cdst);
-}
-*/

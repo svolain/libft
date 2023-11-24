@@ -65,12 +65,12 @@ CFLAGS = -Wall -Wextra -Werror
 all : $(NAME)
 
 $(NAME) : $(OBJS)
-		ar -r  $(NAME) $(OBJS)
+		ar -rcs  $(NAME) $(OBJS)
 
 bonus :  .bonus
 
 .bonus : $(OBJS_B)
-		ar -r $(NAME) $(OBJS_B)
+		ar -rcs $(NAME) $(OBJS_B)
 		touch .bonus
 
 clean :

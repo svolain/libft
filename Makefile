@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: vsavolai <vsavolai@student.hive.fi>        +#+  +:+       +#+         #
+#    By: vsavolai <vsavolai@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/08 10:54:57 by vsavolai          #+#    #+#              #
-#    Updated: 2023/11/10 13:39:55 by vsavolai         ###   ########.fr        #
+#    Updated: 2024/01/04 13:00:05 by vsavolai         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,7 +45,9 @@ SRCS = ft_bzero.c \
 	   ft_putchar_fd.c \
 	   ft_putstr_fd.c \
 	   ft_putendl_fd.c \
-	   ft_putnbr_fd.c 
+	   ft_putnbr_fd.c \
+	   ft_printf.c \
+	   ft_print_specifiers.c \
 
 SRCS_B =	ft_lstnew.c \
 			ft_lstadd_front.c \

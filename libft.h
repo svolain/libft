@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vsavolai <vsavolai@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: vsavolai <vsavolai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 16:18:41 by vsavolai          #+#    #+#             */
-/*   Updated: 2023/11/09 16:11:07 by vsavolai         ###   ########.fr       */
+/*   Updated: 2024/01/04 12:56:47 by vsavolai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <stdlib.h>
 # include <unistd.h>
+# include <stdarg.h>
 
 typedef struct s_list
 {
@@ -64,5 +65,11 @@ void	ft_lstadd_back(t_list **lst, t_list *new);
 void	ft_lstdelone(t_list *lst, void (*del)(void*));
 void	ft_lstclear(t_list **lst, void (*del)(void*));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
+int		ft_printf(const char *format, ...);
+int		ft_print_format(char specifier, va_list al);
+int		ft_print_char(int c);
+int		ft_print_str(char *str);
+int		ft_print_digit(long n, int base, char specifier);
+int		ft_print_pointer(unsigned long n);
 
 #endif

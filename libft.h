@@ -6,7 +6,7 @@
 /*   By: vsavolai <vsavolai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 16:18:41 by vsavolai          #+#    #+#             */
-/*   Updated: 2024/01/04 12:56:47 by vsavolai         ###   ########.fr       */
+/*   Updated: 2024/01/18 12:52:30 by vsavolai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,5 +71,7 @@ int		ft_print_char(int c);
 int		ft_print_str(char *str);
 int		ft_print_digit(long n, int base, char specifier);
 int		ft_print_pointer(unsigned long n);
+long	ft_atol(const char *str);
+void	ft_free_matrix(char **arr);
 
 #endif

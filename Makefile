@@ -6,7 +6,7 @@
 #    By: vsavolai <vsavolai@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/08 10:54:57 by vsavolai          #+#    #+#              #
-#    Updated: 2024/01/04 13:00:05 by vsavolai         ###   ########.fr        #
+#    Updated: 2024/01/18 12:55:03 by vsavolai         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,6 +48,8 @@ SRCS = ft_bzero.c \
 	   ft_putnbr_fd.c \
 	   ft_printf.c \
 	   ft_print_specifiers.c \
+	   ft_free_matrix.c \
+	   ft_atol.c
 
 SRCS_B =	ft_lstnew.c \
 			ft_lstadd_front.c \

@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: vsavolai <vsavolai@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/18 12:48:45 by vsavolai          #+#    #+#             */
-/*   Updated: 2024/01/18 12:52:18 by vsavolai         ###   ########.fr       */
+/*   Created: 2024/01/29 09:42:48 by vsavolai          #+#    #+#             */
+/*   Updated: 2024/01/29 09:52:02 by vsavolai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,4 +22,5 @@ void	ft_free_matrix(char **arr)
 	while (arr[i++])
 		free(arr[i]);
 	free(arr);
+	arr = NULL;
 }

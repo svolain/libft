@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vsavolai <vsavolai@student.42.fr>          +#+  +:+       +#+        */
+/*   By: vsavolai <vsavolai@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 16:18:41 by vsavolai          #+#    #+#             */
-/*   Updated: 2024/01/29 10:10:39 by vsavolai         ###   ########.fr       */
+/*   Updated: 2024/09/15 19:54:18 by vsavolai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <stdarg.h>
+# include <stdint.h>
 
 # ifndef GNL_BUFFER_SIZE
 #  define GNL_BUFFER_SIZE 1000

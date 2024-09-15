@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_get_next_line.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vsavolai <vsavolai@student.42.fr>          +#+  +:+       +#+        */
+/*   By: vsavolai <vsavolai@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/19 14:00:49 by vsavolai          #+#    #+#             */
-/*   Updated: 2024/01/25 13:21:08 by vsavolai         ###   ########.fr       */
+/*   Updated: 2024/09/15 19:57:27 by vsavolai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_read_from_fd(int fd, char *remain)
 	buffer = (char *)malloc(GNL_BUFFER_SIZE + 1);
 	if (buffer == NULL)
 		return (NULL);
-	while (bytes_read && (ft_gnl_strchr(remain, '\n')) == '\0')
+	while (bytes_read && *(ft_gnl_strchr(remain, '\n')) == '\0')
 	{
 		bytes_read = read(fd, buffer, GNL_BUFFER_SIZE);
 		if (bytes_read == -1)
